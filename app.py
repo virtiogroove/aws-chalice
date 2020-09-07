@@ -6,7 +6,7 @@ app = Chalice(app_name='control-ec2')
 @app.authorizer(ttl_seconds=30)
 def my_auth(auth_request):
         # Validate auth_request.token, and then:
-            return AuthResponse(routes=['/'], principal_id='arn:aws:ec2:us-west-2:701203368262:root/*')
+            return AuthResponse(routes=['/'], principal_id='arn:aws:::xxxxxxxxxxxx:root/*')
 
 # Create route to start instance
 @app.route('/start/{name}', authorizer=my_auth)
